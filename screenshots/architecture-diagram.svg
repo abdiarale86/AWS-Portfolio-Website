@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 260" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1180" height="260" fill="#ffffff"/>
+
+  <!-- connectors -->
+  <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M180 130 H260"/>
+    <path d="M440 130 H520"/>
+    <path d="M700 130 H780"/>
+    <path d="M960 130 H1040"/>
+  </g>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Developer -->
+  <g>
+    <rect x="20" y="70" width="160" height="120" rx="12" fill="#0f172a"/>
+    <text x="100" y="120" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Developer</text>
+    <text x="100" y="142" text-anchor="middle" fill="#cbd5e1" font-size="11">git push to main</text>
+  </g>
+
+  <!-- GitHub -->
+  <g>
+    <rect x="260" y="70" width="180" height="120" rx="12" fill="#181717"/>
+    <text x="350" y="118" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">GitHub</text>
+    <text x="350" y="140" text-anchor="middle" fill="#d1d5db" font-size="11">abdiarale86/</text>
+    <text x="350" y="155" text-anchor="middle" fill="#d1d5db" font-size="11">AWS-Portfolio-Website</text>
+  </g>
+
+  <!-- Amplify -->
+  <g>
+    <rect x="520" y="55" width="180" height="150" rx="12" fill="#FF9900"/>
+    <text x="610" y="100" text-anchor="middle" fill="#1a1a1a" font-size="15" font-weight="700">AWS Amplify</text>
+    <text x="610" y="122" text-anchor="middle" fill="#1a1a1a" font-size="11">CDK-managed app</text>
+    <text x="610" y="140" text-anchor="middle" fill="#1a1a1a" font-size="11">CodeBuild + SSR</text>
+    <text x="610" y="158" text-anchor="middle" fill="#1a1a1a" font-size="11">(Platform.WEB_COMPUTE)</text>
+    <text x="610" y="176" text-anchor="middle" fill="#1a1a1a" font-size="11">Secrets Manager token</text>
+  </g>
+
+  <!-- Route53/CloudFront -->
+  <g>
+    <rect x="780" y="55" width="180" height="150" rx="12" fill="#146EB4"/>
+    <text x="870" y="105" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="700">Route 53</text>
+    <text x="870" y="127" text-anchor="middle" fill="#dbeafe" font-size="11">Hosted zone + Alias/CNAME</text>
+    <text x="870" y="150" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="700">CloudFront</text>
+    <text x="870" y="172" text-anchor="middle" fill="#dbeafe" font-size="11">SSL (Amplify managed)</text>
+  </g>
+
+  <!-- Browser -->
+  <g>
+    <rect x="1040" y="70" width="140" height="120" rx="12" fill="#0f172a"/>
+    <text x="1110" y="118" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Browser</text>
+    <text x="1110" y="140" text-anchor="middle" fill="#cbd5e1" font-size="11">abdiarale.com</text>
+  </g>
+</svg>
