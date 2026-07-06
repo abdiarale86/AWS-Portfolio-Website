@@ -1,3 +1,6 @@
+<img width="720" height="333" alt="image" src="https://github.com/user-attachments/assets/be2f4738-d4cc-4f7f-964a-b8e143eaa6b1" />
+
+
 # Building a Cloud-Native Portfolio with Next.js, GitHub & AWS Amplify
 
 ## 📌 Current Situation / Challenge
