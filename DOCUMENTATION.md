@@ -79,6 +79,9 @@ By the end of this project, I will have:
 - A fully deployed portfolio website 🌐
 - Automated CI/CD pipeline ⚡
 - A real-world cloud project for my portfolio
+  
+  <img width="491" height="930" alt="image" src="https://github.com/user-attachments/assets/c312671a-21c4-4311-ab38-0199925f6216" />
+
 
 ---
 
@@ -139,6 +142,11 @@ After running the setup commands, Next.js automatically generated several folder
 
 **`package.json`** — contains the project's metadata, dependencies, scripts, and configuration settings. It tells Node.js which packages the application requires and provides commands for running, building, and deploying the project.
 
+<img width="382" height="129" alt="image" src="https://github.com/user-attachments/assets/312ccca0-254a-4978-98a5-6a217589e040" />
+
+<img width="388" height="117" alt="image" src="https://github.com/user-attachments/assets/d0f53f60-9f0d-4b2c-be25-0a387119b43e" />
+
+
 ### Running the Application
 
 After creating the project, the next step is to start the local development server by running:
@@ -175,9 +183,12 @@ When you open `http://localhost:3000` in your browser, you should see the defaul
 
 > Tip: while developing your application, Next.js automatically reloads the page whenever you save changes to your code. This feature, known as Hot Reloading (Fast Refresh), allows you to see updates instantly without manually refreshing the browser.
 
+<img width="1550" height="566" alt="image" src="https://github.com/user-attachments/assets/8f73cd84-0699-473c-913b-139ab7e3bdae" />
+
 After successfully starting the development server, I opened `http://localhost:3000` in my web browser. The browser displayed the default Next.js landing page, confirming that the application had been created and configured correctly.
 
 At this stage, the website is running locally, allowing me to begin customizing the portfolio and adding my own content.
+<img width="720" height="475" alt="image" src="https://github.com/user-attachments/assets/dfc25664-7a18-46db-b0f9-ccded4923949" />
 
 ### Designing the Front-End Interface
 
