@@ -438,6 +438,9 @@ npm install @aws-cdk/aws-amplify-alpha aws-cdk-lib constructs
 
 **✅ Result:** once the installation completes successfully, the required packages will be added to the project's `package.json` file and downloaded into the `node_modules` directory. The AWS CDK project is now ready to begin defining the infrastructure needed to deploy the portfolio website.
 
+<img width="720" height="789" alt="image" src="https://github.com/user-attachments/assets/c027ccb6-4a36-4056-b974-c39a934852bc" />
+
+
 ### Setting Up GitHub Access for Amplify
 
 With the application and infrastructure projects ready, AWS Amplify needs to connect directly to the GitHub repository so it can automatically deploy the application whenever changes are pushed. This creates a Continuous Integration and Continuous Deployment (CI/CD) workflow, eliminating the need for manual deployments.
@@ -462,6 +465,8 @@ To allow AWS Amplify to access the GitHub repository, it must be granted permiss
 > Important: treat your Personal Access Token like a password. Never commit it to your source code, share it publicly, or store it in your GitHub repository. If you believe the token has been exposed, revoke it immediately and generate a new one.
 
 **Why Is the Personal Access Token Needed?** It allows AWS Amplify to securely authenticate with GitHub so it can access the source code repository, detect new commits and code changes, automatically trigger new builds, and deploy the latest version of the application without manual intervention.
+<img width="350" height="915" alt="image" src="https://github.com/user-attachments/assets/9382dcc2-530d-406f-9a46-f633ee4b92b7" />
+<img width="720" height="398" alt="image" src="https://github.com/user-attachments/assets/84c77407-31bd-4141-8df5-c06459d4ba12" />
 
 With the token created, the next step is to store it securely in AWS Secrets Manager, where it can be accessed by the AWS CDK infrastructure without exposing sensitive credentials in the source code.
 
@@ -508,6 +513,8 @@ The response contains the **ARN** (the unique identifier for the secret within y
 2. Navigate to AWS Secrets Manager.
 3. Select Secrets from the navigation pane.
 4. Locate the secret named `github-token`.
+
+<img width="720" height="171" alt="image" src="https://github.com/user-attachments/assets/753f6e3d-f34d-40e0-a9dc-4710e74e438b" />
 
 **Why Store the Token in AWS Secrets Manager?** It keeps secrets out of the source code, reduces the risk of accidentally exposing credentials, enables secure access from AWS services such as AWS CDK and AWS Amplify, supports centralized management and rotation of secrets, and follows AWS security best practices for handling sensitive information.
 
@@ -684,13 +691,18 @@ The `cdk bootstrap` command prepares your AWS account and Region for CDK deploym
 
 **Deployment Results:** after a successful deployment, the terminal displays the stack outputs along with the status of the deployment. You should also see the new AWS Amplify application in the AWS Management Console, confirming that the infrastructure has been successfully created.
 
+<img width="702" height="741" alt="image" src="https://github.com/user-attachments/assets/635e4349-ec23-48f1-a239-51b9ceb405e2" />
+
 ### Troubleshooting: AWS Amplify Migration Required
 
 During the deployment process, I encountered an issue in the AWS Amplify Console indicating that the application required a migration before it could continue.
 
 **🚨 Issue:** when opening the Amplify application, I was presented with a message stating that an update or migration was required before the application could be managed using the latest Amplify experience.
+<img width="720" height="372" alt="image" src="https://github.com/user-attachments/assets/bb8beb7f-b93c-4e55-a93a-50b6e48c84fb" />
 
 To resolve it, I clicked on the "Portfolio" app and was presented with a screen to "start migration."
+
+<img width="720" height="687" alt="image" src="https://github.com/user-attachments/assets/a6551134-6a46-4ce0-a07e-d52d941b5ced" />
 
 **Completing the Migration:** as part of the migration process, I was required to:
 
@@ -699,7 +711,10 @@ To resolve it, I clicked on the "Portfolio" app and was presented with a screen 
 3. Select the correct GitHub repository (`AWS-Portfolio-Website`) that contains the portfolio application.
 4. Confirm the repository and branch configuration before completing the migration.
 
+<img width="720" height="279" alt="image" src="https://github.com/user-attachments/assets/a1563953-27a1-403e-8814-f8e2ec9c36a4" />
+
 Once these steps were completed, AWS Amplify successfully migrated the application and established the connection to the GitHub repository. From this point onward, every push to the main branch automatically triggers a new build and deployment.
+<img width="720" height="306" alt="image" src="https://github.com/user-attachments/assets/311f7538-4496-43db-b5c0-8506269cb53b" />
 
 ### Running the Initial Build
 
@@ -715,6 +730,7 @@ During the build, AWS Amplify:
 6. Deployed the application to AWS Amplify Hosting.
 
 Throughout the process, Amplify provided real-time build logs, making it easy to monitor each stage of the deployment and identify any potential errors.
+<img width="720" height="372" alt="image" src="https://github.com/user-attachments/assets/6b2f4ab9-5189-4ddd-92c9-f1ea4c53c64b" />
 
 **Successful Deployment:** once the build completed successfully, AWS Amplify published the portfolio website and generated a public URL where the application could be accessed. At this point, the CI/CD pipeline was fully operational — any future commits pushed to the main branch of the GitHub repository automatically trigger a new build and deployment, ensuring the live website always reflects the latest version of the code.
 
@@ -758,6 +774,7 @@ I like to explain the distinction because many beginners confuse these concepts:
 - **AWS Amplify** → Hosting Platform (hosts your website)
 
 Think of it this way: Namecheap owns the address, Route 53 tells visitors where to go, and AWS Amplify hosts the website.
+<img width="720" height="444" alt="image" src="https://github.com/user-attachments/assets/5cae7dc3-2cb2-4cfb-9d49-2388914f67bd" />
 
 ### Step 1: Purchase a Domain
 
@@ -807,6 +824,7 @@ DNS propagation usually takes 5–30 minutes, sometimes a few hours, and at most
 Amplify will show the status, such as "Pending verification," "Waiting for DNS," "Available," or "SSL certificate issued." Once you see **Available**, your domain is ready.
 
 **Option 2: Check Route 53 with a DNS Checker.** Use an online DNS propagation checker such as `dnschecker.org`. Enter `abdiarale.com`, select NS from the dropdown, and if the results show your AWS Route 53 nameservers from multiple locations around the world, the nameserver change has propagated successfully.
+<img width="576" height="667" alt="image" src="https://github.com/user-attachments/assets/90a7571a-ce31-48f7-87f3-4c17eccd256d" />
 
 Once propagation finishes, Route 53 becomes responsible for your DNS.
 
@@ -827,7 +845,10 @@ AWS Amplify integrates directly with Route 53, making it possible to configure t
 7. Enable the option to set up a redirect from `https://abdiarale.com` to `https://www.abdiarale.com` so that visitors are redirected to a single, consistent URL.
 8. Finally, click **Add domain** to begin the domain verification and configuration process.
 
+<img width="720" height="179" alt="image" src="https://github.com/user-attachments/assets/bfc20c3f-4afc-433b-bb67-afa32c05041f" />
+
 After submitting the configuration, AWS Amplify automatically creates the required DNS records in Amazon Route 53, requests an SSL certificate from AWS Certificate Manager (ACM), and verifies ownership of the domain. Amplify will then show status messages like "Pending verification," "Creating records," and "Requesting certificate," before eventually changing to "Available" and "Certificate issued."
+<img width="720" height="311" alt="image" src="https://github.com/user-attachments/assets/6c1cbd62-fb91-484a-854a-3eb4c394be9d" />
 
 Once these steps are complete, the portfolio website becomes securely accessible via `https://www.abdiarale.com` with HTTPS enabled.
 
@@ -838,6 +859,8 @@ Once these steps are complete, the portfolio website becomes securely accessible
 The portfolio website has now been successfully deployed and is publicly accessible using my custom domain: **abdiarale.com**.
 
 By combining modern web development with AWS cloud services, I created a fully automated deployment pipeline that allows changes to be published with a simple Git push.
+
+<img width="720" height="302" alt="image" src="https://github.com/user-attachments/assets/cee10b1c-3c49-4f7d-a414-f5ade4f67608" />
 
 The completed architecture looks like this:
 
