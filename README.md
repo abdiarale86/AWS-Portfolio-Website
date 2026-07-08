@@ -41,9 +41,13 @@ This project is a production portfolio site built with Next.js and deployed on A
 ## 💡 What I Learned
 
 ✅ Deploying Next.js SSR apps on AWS Amplify (and how it differs from static export)
+
 ✅ Defining Amplify apps declaratively with AWS CDK instead of the console
+
 ✅ Wiring up a custom domain end-to-end with Route 53 and Amplify-managed certificates
+
 ✅ Diagnosing production issues directly from CloudFront/S3 response headers
+
 ✅ Managing GitHub credentials securely with AWS Secrets Manager
 
 ## 📁 Project Structure
