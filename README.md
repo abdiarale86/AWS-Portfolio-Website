@@ -15,7 +15,8 @@ This project is a production portfolio site built with Next.js and deployed on A
 
 ## 🏗️ Architecture
 
-![Architecture Diagram](screenshots/architecture-diagram.svg)
+<img width="720" height="333" alt="image" src="https://github.com/user-attachments/assets/cd2e061f-0aeb-4290-9912-9413f392ba5b" />
+
 
 **Workflow:** Next.js Application → GitHub Repository → AWS Amplify (Compute/SSR) → Route 53 + CloudFront → `abdiarale.com`
 
