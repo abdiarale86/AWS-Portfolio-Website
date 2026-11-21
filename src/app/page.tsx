@@ -1,17 +1,5 @@
 "use client";
 
-const heroStats = [
-  { icon: "☁️", value: "AWS", label: "SAA-C03 & Terraform Certified" },
-  { icon: "⚡", value: "80%", label: "Less Infra Maintenance" },
-  { icon: "🚀", value: "70%", label: "Faster CI/CD Deployments" },
-];
-
-const quickInfo = [
-  { label: "Experience", value: "3+ Years" },
-  { label: "Focus", value: "Terraform, Kubernetes, CI/CD" },
-  { label: "Specialization", value: "AWS" },
-];
-
 const experience = [
   {
     date: "Aug 2025 – Jun 2026",
@@ -56,25 +44,18 @@ const projects = [
   {
     name: "Nexacore IAM Security Project",
     description:
-      "Implemented secure IAM infrastructure for a startup that was sharing AWS root account credentials, establishing role-based access control (RBAC) and eliminating critical security vulnerabilities.",
+      "Replaced shared AWS root access with role-based permissions and CloudTrail auditing.",
     tech: ["Terraform", "AWS IAM", "CloudTrail"],
     href: "https://github.com/abdiarale86/Nexacore-IAM-Security-Project",
   },
   {
     name: "ServiceHub AWS Terraform",
     description:
-      "Reusable Terraform framework for deploying ServiceHub on AWS across multiple environments, with modular design, workspace isolation, encrypted private subnets, multi-AZ high availability, auto-scaling, and audit logging.",
+      "Built reusable Terraform modules so ServiceHub could deploy isolated AWS environments across availability zones.",
     tech: ["Terraform", "AWS", "Shell"],
     href: "https://github.com/abdiarale86/Servicehub_AWS_terraform",
   },
-  {
-    name: "AWS Portfolio Website",
-    description:
-      "This personal portfolio site, built to showcase cloud engineering experience, projects, and certifications, deployed live on AWS.",
-    tech: ["Next.js", "React", "TypeScript"],
-    href: "https://www.travonsportfolio.com/",
-    repoHref: "https://github.com/abdiarale86/AWS-Portfolio-Website",
-  },
+
 ];
 
 const skills = [
@@ -723,6 +704,32 @@ export default function Home() {
           color: #666;
         }
 
+        .hero-action { position: relative; z-index: 2; }
+        .hero-grid { grid-template-columns: 1.15fr 1fr; }
+        .delivery { background: #0a121d; border: 1px solid #32475a; border-radius: 20px; padding: clamp(20px, 3vw, 38px); }
+        .terminal-label, .delivery code { font-family: var(--font-geist-mono), monospace; color: #82e1c3; }
+        .terminal-label { font-size: .8rem; }
+        .delivery h2 { margin: 12px 0 20px; font-size: 1.65rem; font-weight: 700; }
+        .delivery ol { list-style: none; border-left: 2px solid #34544e; padding-left: 18px; }
+        .delivery li + li { margin-top: 12px; }
+        .delivery li span { display: block; color: #bdc8cf; }
+        .delivery a { display: inline-block; margin-top: 20px; color: #a9d9ff; text-decoration: underline; }
+        [id] { scroll-margin-top: 100px; }
+        .projects-grid-advanced { grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); }
+        @media (max-width: 640px) {
+          nav { position: static; }
+          .nav-container { flex-wrap: wrap; gap: 12px; padding: 0 18px; }
+          .nav-links { gap: 16px; flex-wrap: wrap; }
+          .hero-dashboard { margin-top: 0; padding: 28px 18px 0; }
+          .hero-main, .contact-main { padding: 24px; }
+          .projects-dashboard, .timeline-section, .skills-matrix, .contact-dashboard { padding: 0 18px; }
+          .contact-methods { grid-template-columns: 1fr; }
+          .contact-method { flex-wrap: wrap; overflow-wrap: anywhere; }
+          .timeline, .timeline-item { padding-left: 14px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-main::before { animation: none; }
+        }
         @media (max-width: 1024px) {
           .hero-grid {
             grid-template-columns: 1fr;
@@ -732,6 +739,37 @@ export default function Home() {
             font-size: 3em;
           }
         }
+
+        body { background: #0a1016; color: #eef6fa; font-family: var(--font-geist-sans), Arial, sans-serif; }
+        nav { background: #0b1219; border-color: #26333b; }
+        .logo { background: #83f4bb; color: #102019; border-radius: 5px; font-family: monospace; }
+        .nav-links a:hover, .timeline-date { color: #83f4bb; }
+        .hero-dashboard { background-image: linear-gradient(#17242a 1px, transparent 1px), linear-gradient(90deg,#17242a 1px, transparent 1px); background-size: 38px 38px; padding-block: clamp(40px,7vw,90px); }
+        .hero-grid { grid-template-columns: 1fr 1fr; gap: clamp(24px,5vw,72px); align-items: center; margin: 0; }
+        .hero-main { background: #0a1016eb; border: 0; border-radius: 0; padding: 18px 0; }
+        .hero-main::before { display: none; }
+        .hero-main h1 { font-size: clamp(3.1rem,6.5vw,6.5rem); line-height: .98; letter-spacing: -.065em; background: none; color: #f4f8ff; -webkit-text-fill-color: currentColor; }
+        .hero-main h1 span { display: block; color: #83f4bb; }
+        .hero-main .tagline { font-size: 1.1rem; color: #b4c4ce; max-width: 47ch; }
+        .byline, .terminal-label, .project-header small { color: #92e1c2; font: 600 .82rem/1.6 ui-monospace, monospace; }
+        .byline { margin-bottom: 14px; }
+        .project-link-btn { background: #8af3bc; color: #091710; border-radius: 5px; }
+        .project-link-btn:hover { background: #b3ffd6; }
+        .delivery { background: #0b141c; border: 1px solid #394c56; border-radius: 12px; padding: 0; overflow: hidden; box-shadow: 0 20px 50px #0005; }
+        .terminal-label { background: #15212b; padding: 12px 18px; border-bottom: 1px solid #34434c; }
+        .delivery h2, .pipeline, .console-output, .delivery .case-link { margin: 20px; }
+        .delivery h2 { font-size: 1.3rem; }
+        .pipeline { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+        .pipeline b { padding: 5px 10px; border: 1px solid #38644f; color: #a6fbc8; border-radius: 4px; font: 600 .82rem monospace; }
+        .console-output { border-top: 1px solid #293640; padding-top: 14px; color: #b5c4d1; font: .88rem/1.9 ui-monospace, monospace; }
+        .console-output code { color: #85edb4; }
+        .delivery .case-link { display: block; color: #9edaff; }
+        .project-card-advanced, .timeline-card, .skill-category, .contact-main { border-radius: 9px; background: #101a22; border-color: #2b3942; }
+        .project-header { background: #15212a; padding: 22px 30px; border-bottom: 1px solid #2b3942; }
+        .project-header h3 { margin: 6px 0 0; }
+        .section-title::before { background: #83f4bb; width: 28px; }
+        .tech-badge-advanced { color: #a4dec6; border-color: #344e46; background: #13261f; border-radius: 4px; font-family: monospace; }
+        @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
       `}</style>
 
       <nav>
@@ -752,67 +790,34 @@ export default function Home() {
       <div className="hero-dashboard">
         <div className="hero-grid">
           <div className="hero-main">
-            <h1>Abdi Jama Arale</h1>
-            <p className="tagline">
-              DevOps Engineer | Helping enterprises build production-grade cloud infrastructure | ML & AI Enthusiast
-            </p>
-            <div className="hero-stats">
-              {heroStats.map((stat) => (
-                <div className="stat-item" key={stat.label}>
-                  <div className="stat-icon">{stat.icon}</div>
-                  <div className="stat-info">
-                    <h3>{stat.value}</h3>
-                    <p>{stat.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="byline">Abdi Jama Arale / DevOps Engineer</p>
+            <h1>Cloud infrastructure.<span>Built as code.</span></h1>
+            <p className="tagline">I build AWS environments with Terraform and automate how applications move from a Git commit to production.</p>
+            <a className="project-link-btn" href="#projects">Explore my projects ↓</a>
           </div>
-          <div className="hero-side">
-            <div className="info-card">
-              <h3>Quick Info</h3>
-              <ul className="info-list">
-                {quickInfo.map((item) => (
-                  <li key={item.label}>
-                    <span className="info-label">{item.label}</span>
-                    <span className="info-value">{item.value}</span>
-                  </li>
-                ))}
-              </ul>
+          <aside className="delivery" aria-labelledby="delivery-title">
+            <p className="terminal-label">~/aws-portfolio / main</p>
+            <h2 id="delivery-title">Original AWS deployment</h2>
+            <div className="pipeline" aria-label="Pipeline stages"><b>Commit</b> → <b>Build</b> → <b>Deploy</b></div>
+            <div className="console-output">
+              <p><code>$ git push origin main</code></p>
+              <p>↳ GitHub triggered an Amplify build</p>
+              <p>↳ Amplify packaged the Next.js app</p>
+              <p>↳ Route 53 routed abdiarale.com to Amplify</p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="timeline-section" id="experience">
-        <h2 className="section-title">Experience</h2>
-        <div className="timeline">
-          {experience.map((job) => (
-            <div className="timeline-item" key={`${job.company}-${job.date}`}>
-              <div className="timeline-date">{job.date}</div>
-              <div className="timeline-card">
-                <h3>{job.role}</h3>
-                <div className="role">{job.company}</div>
-                <ul>
-                  {job.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+            <a className="case-link" href="https://github.com/abdiarale86/AWS-Portfolio-Website/blob/main/DOCUMENTATION.md">Read the deployment and 404 investigation ↗</a>
+          </aside>
         </div>
       </div>
 
       <div className="projects-dashboard" id="projects">
         <h2 className="section-title">Featured Projects</h2>
         <div className="projects-grid-advanced">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div className="project-card-advanced" key={project.name}>
               <div className="project-header">
-                <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
+                <small>{project.tech.join(" / ")}</small>
                 <h3>{project.name}</h3>
-                <span className="project-status">✓ Completed</span>
               </div>
               <div className="project-body">
                 <p>{project.description}</p>
@@ -830,19 +835,29 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="project-link-btn"
                   >
-                    {project.repoHref ? "View Live Site" : "View on GitHub"} →
+                    View on GitHub →
                   </a>
-                  {project.repoHref && (
-                    <a
-                      href={project.repoHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link-btn secondary"
-                    >
-                      View Code →
-                    </a>
-                  )}
                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="timeline-section" id="experience">
+        <h2 className="section-title">Experience</h2>
+        <div className="timeline">
+          {experience.map((job) => (
+            <div className="timeline-item" key={`${job.company}-${job.date}`}>
+              <div className="timeline-date">{job.date}</div>
+              <div className="timeline-card">
+                <h3>{job.role}</h3>
+                <div className="role">{job.company}</div>
+                <ul>
+                  {job.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
@@ -908,7 +923,7 @@ export default function Home() {
       </div>
 
       <footer>
-        <p>Built with Next.js &amp; Terraform | © 2026 Abdi Arale</p>
+        <p>Built with Next.js | © 2026 Abdi Arale</p>
       </footer>
     </>
   );
